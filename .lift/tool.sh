@@ -3,15 +3,14 @@ function run() {
   SLEEP="10"
 
   if [ -s "SLEEP_DURATION" ];then
-    SLEEP=$(cat SLEEP_DURATION | tr -d '\n')
+    SLEEP=$(tr -d '\n' < SLEEP_DURATION)
   fi
 
-  echo "Sleeping for ${SLEEP} seconds"
-  sleep ${SLEEP}
+  sleep "${SLEEP}"
 
   OUTPUT=$(cat <<EOT
-  [ { "type"        : "I'm sleeping",
-  "message"     : "I just slept for ${SLEEP} seconds",
+  [ { "type"        : "Sleep",
+  "message"     : "Rip Van Winkle just slept for ${SLEEP} seconds",
   "file"        : "README.md",
   "line"        : 0,
   "details_url" : null
@@ -20,7 +19,7 @@ function run() {
 EOT
 )
 
-echo ${OUTPUT}
+echo "${OUTPUT}"
 
 exit 0
 }
