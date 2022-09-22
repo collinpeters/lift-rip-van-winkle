@@ -9,11 +9,8 @@ function run() {
   sleep "${SLEEP}"
 
   OUTPUT=$(cat <<EOT
-  [ { "type"        : "I'm sleeping",
-  "message"     : "I just slept for ${SLEEP} seconds",
-  "file"        : "README.md",
-  "line"        : 0,
-  "details_url" : null
+  [ { "type"        : "Sleep",
+  "message"     : "Rip Van Winkle just slept for ${SLEEP} seconds"
 }
 ]
 EOT
