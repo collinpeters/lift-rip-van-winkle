@@ -10,7 +10,10 @@ function run() {
 
   OUTPUT=$(cat <<EOT
   [ { "type"        : "Sleep",
-  "message"     : "Rip Van Winkle just slept for ${SLEEP} seconds"
+  "message"     : "Rip Van Winkle just slept for ${SLEEP} seconds",
+  "file"        : null,
+  "line"        : null,
+  "details_url" : null
 }
 ]
 EOT
